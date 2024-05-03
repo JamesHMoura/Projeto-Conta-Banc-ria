@@ -1,9 +1,9 @@
 package conta;
 import java.util.*;
-import conta.model.Conta;
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
 import conta.util.*;
+import java.io.IOException;
 public class Menu {
 
 	public static void main(String[] args) {
@@ -50,8 +50,17 @@ public class Menu {
 				Entre com a opção desejada: 
 				
 				"""+Cores.TEXT_RESET);
-		
-			opcao = leia.nextInt();
+			try {
+				opcao = leia.nextInt();
+			}catch(InputMismatchException e) {
+				System.out.println("\nDigite valores inteiros!");
+				leia.nextLine();
+				opcao=0;
+			}
+			
+			
+			
+			
 			
 			if (opcao == 9) {
 				System.out.println(Cores.TEXT_WHITE_BOLD+ "\nBanco do Brazil com Z - O Futuro começa aqui!");
@@ -63,36 +72,65 @@ public class Menu {
 			switch(opcao) {
 			case 1:
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Criar Conta\n\n");
+				
+				KeyPress();
 				break;
 			case 2: 
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Listar todas as Contas\n\n");
+				
+				KeyPress();
 				break;
 			case 3: 
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Consultar dados da Conta - por número\n\n");
+				
+				KeyPress();
 				break;
 			case 4:
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Atualizar dados da Conta\n\n");
+				
+				KeyPress();
 				break;
 			case 5:
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Apagar a Conta\n\n");
+				
+				KeyPress();
 				break;
 			case 6:
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Saque\n\n");
+				
+				KeyPress();
 				break;
 			case 7: 
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Depósito\n\n");
+				
+				KeyPress();
 				break;
 			case 8:
 				System.out.println(Cores.TEXT_WHITE_BOLD+"Transferência entre Contas\n\n");
+				
+				KeyPress();
 				break;
 			default: 
 				System.out.println(Cores.TEXT_WHITE_BOLD+"\nOpção Inválida!\n");
+				
+				KeyPress();
 				break;
 			}
 		
 		}
 		
 	}
+	
+	public static void KeyPress() {
+		try {
+			System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+			System.in.read();
+		}catch(IOException e) {
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+		}
+	}
+	
+	
 	public static void sobre() {
 		System.out.println("""
 				
