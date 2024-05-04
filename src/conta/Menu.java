@@ -29,31 +29,31 @@ public class Menu {
 		
 		
 		while(true) {
-			System.out.println(Cores.TEXT_BLUE_BRIGHT +"""
+			System.out.println(Cores.TEXT_BLUE_BRIGHT + Cores.ANSI_BLACK_BACKGROUND+"""
 				*************************************************************************
-				
-							BANCO DO BRAZIL COM Z
-				
+				*                                                                       *
+				*           BANCO DO BRAZIL COM Z                                       *
+				*                                                                       *
 				*************************************************************************
-				
-							1 - Criar Conta
-							2 - Listar todas as Contas
-							3 - Buscar Conta por Numero
-							4 - Atualizar Dados da Conta
-							5 - Apagar Conta
-							6 - Sacar
-							7 - Depositar
-							8 - Transferir valores entre Contas
-							9 - Sair
-								
+				*                                                                       *
+				*           1 - Criar Conta                                             *
+				*           2 - Listar todas as Contas                                  *
+				*           3 - Buscar Conta por Numero                                 *
+				*           4 - Atualizar Dados da Conta                                *
+				*           5 - Apagar Conta                                            *
+				*           6 - Sacar                                                   *
+				*           7 - Depositar                                               *
+				*           8 - Transferir valores entre Contas                         *
+				*           9 - Sair                                                    *
+				*                                                                       *
 				*************************************************************************
-				Entre com a opção desejada: 
-				
+		
 				"""+Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_BLUE_BRIGHT+"Entre com a opção desejada: "+Cores.TEXT_RESET);
 			try {
 				opcao = leia.nextInt();
 			}catch(InputMismatchException e) {
-				System.out.println("\nDigite valores inteiros!");
+				System.out.println(Cores.TEXT_RED+"\nDigite valores inteiros!");
 				leia.nextLine();
 				opcao=0;
 			}
@@ -132,7 +132,7 @@ public class Menu {
 	
 	
 	public static void sobre() {
-		System.out.println("""
+		System.out.println(Cores.TEXT_YELLOW+"""
 				
 				*********************************************************
 				Projeto Desenvolvido por:

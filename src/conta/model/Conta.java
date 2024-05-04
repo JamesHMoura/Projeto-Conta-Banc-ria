@@ -1,5 +1,7 @@
 package conta.model;
 
+import conta.util.Cores;
+
 public abstract class Conta {
 	
 	private int numero;
@@ -82,7 +84,7 @@ public abstract class Conta {
 			break;
 		}
 		
-		System.out.println("""
+		System.out.println(Cores.TEXT_YELLOW+"""
 				
 				
 				***********************************************************
